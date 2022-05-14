@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+    <div class="products-page">
+        <h1 class="page-title">Nos produits</h1>
+        <div class="app-container">
+            <div class="products-container">
+                {% for product in products %}
+                    <div class="product">
+                        <div class="product_image">
+                            <img src="{{ product.image }}"></img>
+                        </div>
+                        <div class="product_infos">
+                            {% for cat in product.categories %}
+                                <p class="product-cat">{{ cat }}</p>
+                            {% endfor %}
+                            <p class="product-title">{{ product.name }}</p>
+                            <a class="button" href="{{ path('app_product_show', {'id': product.id}) }}">Voir</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

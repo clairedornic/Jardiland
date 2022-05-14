@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="banner" style="background-image: url('https://www.jardiland.com/wp-content/uploads/2022/05/1500x570_slide_MOB20P_new.jpg')">
+
+</div>
+<div class="app-container">
+    <section class="top-products">
+        <h2 class="subtitle">Nos produits phares</h2>
+        {% include 'layout/highlighted-products.html.twig' %}
+    </section>
+
+    <section class="categories-highlighted">
+        <h2 class="subtitle">Nos catégories</h2>
+        {% include 'layout/categories-products.html.twig' %}
+    </section>
+</div>
+{% endblock %}

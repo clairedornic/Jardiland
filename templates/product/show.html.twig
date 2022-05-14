@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product{% endblock %}
+
+{% block body %}
+    <div class="app-container">
+        <div class="single-product">
+            <div class="get-bak-to-products">
+                <a class="button" href="{{ path('app_product_index') }}">Retour aux produits</a>
+            </div>
+            <div class="product_image">
+                <img src="{{ product.image }}"></img>
+            </div>
+            <div class="product_infos">
+                <h1>{{ product.name }}</h1>
+                <p class="price">{{ product.price }}€<p>
+                <p>Stock :  {{ product.stock }}<p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+{% endblock %}

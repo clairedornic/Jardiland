@@ -1,0 +1,22 @@
+<section>
+    <div class="action-add">
+        <a class="button" href="{{ path('admin_category_new') }}">Ajouter une catégorie</a>
+    </div>
+    <div class="categories-container">
+        {% if categories %}
+            {% for category in categories %}
+                <div class="category">
+                    <div class="category-title-container">
+                        <h3 class="category-title">{{category.name}}</h3>
+                    </div>
+                    <div class="product-actions-container">
+                        <a class="button" href="{{ path('admin_category_edit', {'id': category.id}) }}">Modifier</a>
+                        <a class="button" href="{{ path('admin_category_delete', {'id': category.id}) }}">Supprimer</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p> No categories </p>
+        {% endif %}
+    </div>
+<section>

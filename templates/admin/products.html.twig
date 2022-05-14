@@ -1,0 +1,25 @@
+<section>
+    <div class="action-add">
+        <a class="button" href="{{ path('admin_product_new') }}">Ajouter un produit</a>
+    </div>
+    <div class="products-container">
+        {% if products %}
+            {% for product in products %}
+                <div class="product">
+                    <div class="product_image">
+                        <img src="{{ product.image }}"></img>
+                    </div>
+                    <div class="product-title-container">
+                        <p class="product-title">{{product.name}}</p>
+                    </div>
+                    <div class="product-actions-container">
+                        <a class="button" href="{{ path('admin_product_edit', {'id': product.id}) }}">Modifier</a>
+                        <a class="button" href="{{ path('admin_product_delete', {'id': product.id}) }}">Supprimer</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p> No products </p>
+        {% endif %}
+    </div>
+<section>
